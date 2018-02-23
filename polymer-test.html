@@ -1,0 +1,55 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+
+<dom-module id="polymer-test">
+  <template>
+    <!--<style>-->
+      <!--:host {-->
+        <!--display: block;-->
+      <!--}-->
+    <!--</style>-->
+    <h3>Todo:</h3>
+    <dom-repeat
+        items="{{tasks}}" as="task">
+
+        <template>
+            <div>
+              <input type="checkbox" />
+              <input type="text" value="{{task.text}}"/>
+            </div>
+        </template>
+    </dom-repeat>
+    <h3>Completed:</h3>
+    <button>Add Task</button>
+  </template>
+
+  <script>
+    /**
+     * `polymer-test`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class PolymerTest extends Polymer.Element {
+      static get is() { return 'polymer-test'; }
+      static get properties() {
+        return {
+          tasks: {
+            type: Array,
+            value: () => [{
+                id: '1',
+                text: 'asdasd'
+            }, {
+                id: '2',
+                text: 'sdsdf'
+            }]
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PolymerTest.is, PolymerTest);
+  </script>
+</dom-module>

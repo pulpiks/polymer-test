@@ -1,0 +1,9 @@
+.idea/
+README.md
+bower.json
+bower_components/
+demo/
+index.html
+node_modules/
+polymer.json
+test/
